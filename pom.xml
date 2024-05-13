@@ -61,6 +61,13 @@
 			<version>1.2.7</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+			<groupId>9d6e03ef-b194-4a50-b2b2-5cd62c31ab45</groupId>
+			<artifactId>tn-store-movil-xapi-svc</artifactId>
+			<version>1.0.2</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
+		</dependency>
 	</dependencies>
 
 	<repositories>
