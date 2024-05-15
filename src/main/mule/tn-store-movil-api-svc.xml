@@ -134,5 +134,6 @@ output application/json
 } as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
             </ee:message>
         </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="8d3f8db9-d363-4154-b76d-41db455f8ebc" name="post-register-handlerSub_Flow"/>
     </flow>
 </mule>
