@@ -15,8 +15,6 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
             </http:error-response>
         </http:listener>
         <apikit:router config-ref="tn-store-movil-api-svc-config" />
-        <logger level="INFO" doc:name="Logger" doc:id="7531f1d6-b2a8-4972-b84d-7afb30dccd92" message='#[output application/java&#10;---&#10;"Username:" ++ Mule::p("secure::example.username")&#10;++ " - " ++ &#10;"Password:" ++ Mule::p("secure::example.passsword")]'/>
-		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="0b51ecc9-c122-4c77-b6c9-bd65024f772d" />
 		<error-handler>
             <on-error-propagate type="APIKIT:BAD_REQUEST">
                 <ee:transform doc:name="Transform Message">
@@ -136,6 +134,5 @@ output application/json
 } as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
             </ee:message>
         </ee:transform>
-		<flow-ref doc:name="go to handler" doc:id="0135b65c-9779-4872-a01c-5583b7ea9a2e" name="post-register-handlerSub_Flow"/>
     </flow>
 </mule>

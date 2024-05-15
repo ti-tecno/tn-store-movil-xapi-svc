@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
-	<sub-flow name="post-register-orchestratorSub_Flow" doc:id="e293829b-28d5-415c-a168-3c3d3e6ee6e1" >
-		<flow-ref doc:name="Go to client" doc:id="184b79f9-96ef-46cc-8c2a-6a843a56a950" name="post-register-clientSub_Flow"/>
-	</sub-flow>
-</mule>
