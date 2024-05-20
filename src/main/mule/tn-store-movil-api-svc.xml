@@ -123,7 +123,20 @@ output application/json
             </on-error-propagate>
         </error-handler>
     </flow>
-    <flow name="post:\register:application\json:tn-store-movil-api-svc-config">
+    <flow name="post:\user\login:application\json:tn-store-movil-api-svc-config">
+        <ee:transform doc:name="Transform Message">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  message: "administrador creado con exito"
+} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<flow-ref doc:name="Go to handler" doc:id="d090ab4b-b0e5-4e88-92a7-75e2a9ba8a57" name="post-user-login-handlerSub_Flow"/>
+    </flow>
+    <flow name="post:\user\register:application\json:tn-store-movil-api-svc-config">
         <ee:transform doc:name="Transform Message">
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0
@@ -135,29 +148,5 @@ output application/json
             </ee:message>
         </ee:transform>
         <flow-ref doc:name="Go to handler" doc:id="8d3f8db9-d363-4154-b76d-41db455f8ebc" name="post-register-handlerSub_Flow" />
-    </flow>
-    <flow name="post:\user%3A\register\login:application\json:tn-store-movil-api-svc-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "administrador creado con exito"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
-    </flow>
-    <flow name="post:\user%3A\register:application\json:tn-store-movil-api-svc-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "administrador creado con exito"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
     </flow>
 </mule>
