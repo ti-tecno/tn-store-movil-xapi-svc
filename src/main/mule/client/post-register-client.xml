@@ -6,15 +6,6 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="post-register-clientSub_Flow" doc:id="02d629ee-5aee-4ddf-ab91-1051f1a338b2" >
-		<ee:transform doc:name="Transform Message" doc:id="eaff8028-0ce4-4cd1-8c48-83f997c192d5" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{
-	"mesagge": "listo"
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="002b22a2-7736-4d36-bde9-dfc65291a1cf" config-ref="HTTP_Request_configuration" path="/register" />
 	</sub-flow>
 </mule>
