@@ -134,7 +134,7 @@ output application/json
 } as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
             </ee:message>
         </ee:transform>
-		<flow-ref doc:name="Go to handler" doc:id="d090ab4b-b0e5-4e88-92a7-75e2a9ba8a57" name="post-user-login-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="d090ab4b-b0e5-4e88-92a7-75e2a9ba8a57" name="post-user-login-handlerSub_Flow" />
     </flow>
     <flow name="post:\user\register:application\json:tn-store-movil-api-svc-config">
         <ee:transform doc:name="Transform Message">
