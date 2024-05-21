@@ -6,6 +6,12 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="post-register-clientSub_Flow" doc:id="02d629ee-5aee-4ddf-ab91-1051f1a338b2" >
-		<http:request method="POST" doc:name="Request" doc:id="002b22a2-7736-4d36-bde9-dfc65291a1cf" config-ref="HTTP_Request_configuration" path="/register" />
+		<http:request method="POST" doc:name="Request" doc:id="002b22a2-7736-4d36-bde9-dfc65291a1cf" config-ref="HTTP_Request_configuration" path="/register" >
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"" : "Value"
+}]]]></http:headers>
+		</http:request>
 	</sub-flow>
 </mule>
