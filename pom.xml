@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>tn-store-movil-xapi-svc</name>
+	<name>tn-store-movil-xapi-svc1</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,6 +60,13 @@
 			<artifactId>mule-secure-configuration-property-module</artifactId>
 			<version>1.2.7</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>9d6e03ef-b194-4a50-b2b2-5cd62c31ab45</groupId>
+			<artifactId>tn-store-movil-xapi-svc</artifactId>
+			<version>1.0.12</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
 		</dependency>
 	</dependencies>
 

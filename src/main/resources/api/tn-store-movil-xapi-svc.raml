@@ -1,0 +1,43 @@
+#%RAML 1.0
+title: tn-store-movil-api-svc
+types:
+  register_admin: !include /data_type/user_register.raml
+  user-login: !include /data_type/user_login.raml
+/user:
+  post:
+    headers:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+    description: este servicio regitra al administrador de la compania
+    body:
+      application/json:
+        type: register_admin
+    responses:
+      500:
+        description: Bad response from authorization server, or WSDL SOAP Fault error
+      201:
+        body:
+            application/json:
+                example: !include /example/response/post_register.json
+  /login:
+    post:
+      headers:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+      description: este servicio permite logear el usuario
+      body:
+        application/json:
+          type: user-login
+      responses:
+        401:
+          description: Unauthorized or invalid client application credentials
+        500:
+          description: Bad response from authorization server, or WSDL SOAP Fault error
+        200:
+          body:
+              application/json:
+                  example: !include /example/response/post_login.json
