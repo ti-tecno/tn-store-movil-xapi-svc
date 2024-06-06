@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>tn-store-movil-xapi-svc-</artifactId>
-	<version>1.0.0</version>
+	<artifactId>tn-store-movil-xapi-svc1</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>tn-store-movil-xapi-svc10</name>
+	<name>tn-store-movil-xapi-svc1</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,7 +30,7 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>---- select project type ----</classifier>
+					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -56,15 +56,16 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.mulesoft.modules</groupId>
-			<artifactId>mule-secure-configuration-property-module</artifactId>
-			<version>1.2.7</version>
-			<classifier>mule-plugin</classifier>
+			<groupId>740d1e14-4f09-4a77-a590-5b279bff931d</groupId>
+			<artifactId>tn-store-movil-xapi-svc</artifactId>
+			<version>1.0.2</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
 		</dependency>
 		<dependency>
-			<groupId>9d6e03ef-b194-4a50-b2b2-5cd62c31ab45</groupId>
-			<artifactId>tn-store-movil-xapi-svc</artifactId>
-			<version>1.0.12</version>
+			<groupId>740d1e14-4f09-4a77-a590-5b279bff931d</groupId>
+			<artifactId>tn-store-user-papi-svc</artifactId>
+			<version>1.0.3</version>
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>

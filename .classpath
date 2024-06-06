@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/9d6e03ef-b194-4a50-b2b2-5cd62c31ab45/tn-store-movil-xapi-svc/1.0.12"/>
-	<classpathentry kind="con" path="org.mule.tooling.MULE_PROJECT_LIB"/>
-	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.modules/mule-secure-configuration-property-module/1.2.7"/>
 	<classpathentry kind="con" path="MULE_LIB/org.mule.modules/mule-apikit-module/1.10.3"/>
+	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/740d1e14-4f09-4a77-a590-5b279bff931d/tn-store-movil-xapi-svc/1.0.2"/>
+	<classpathentry kind="con" path="org.mule.tooling.MULE_PROJECT_LIB"/>
+	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/740d1e14-4f09-4a77-a590-5b279bff931d/tn-store-user-papi-svc/1.0.3"/>
 	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sockets-connector/1.2.4"/>
 	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-http-connector/1.9.1"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="MULE_RUNTIME/org.mule.tooling.server.4.6.ee"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/mule"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
