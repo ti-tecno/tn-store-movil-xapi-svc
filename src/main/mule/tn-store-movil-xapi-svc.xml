@@ -5,7 +5,7 @@
     </http:listener-config>
     <apikit:config name="tn-store-movil-xapi-svc-config" api="tn-store-movil-xapi-svc.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="tn-store-movil-xapi-svc-main">
-        <http:listener config-ref="tn-store-movil-xapi-svc-httpListenerConfig" path="/api/*">
+        <http:listener config-ref="tn-store-movil-xapi-svc-httpListenerConfig" path="/empresa/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:response>
@@ -123,10 +123,23 @@ output application/json
             </on-error-propagate>
         </error-handler>
     </flow>
-    <flow name="post:\user\login:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Flow Reference" doc:id="09e2ce96-7186-4756-a11e-d044f465ee52" name="post-user-login-handlerSub_Flow" />
-    </flow>
     <flow name="post:\user:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Flow Reference" doc:id="f33f2b06-2257-4ee8-b884-bbe75efbdbfd" name="post-user-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="ec54f14e-bf55-4af5-9ed0-f22f442a9d73" name="post-user-handlerSub_Flow" />
+    </flow>
+    <flow name="post:\user\login:application\json:tn-store-movil-xapi-svc-config">
+        <flow-ref doc:name="Go to handler" doc:id="1e5a6761-27de-452a-b74c-cf2e0a5b7e78" name="post-user-login-handlerSub_Flow" />
+    </flow>
+    <flow name="post:\user\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
+        <flow-ref doc:name="Go to handler" doc:id="5f7a0669-17bb-4f42-b7ae-696b40393550" name="post-user-recoverPassword-handlerSub_Flow" />
+    </flow>
+	<flow name="patch:\user\new_password:application\json:tn-store-movil-xapi-svc-config">
+        <ee:transform doc:name="Transform Message" doc:id="f8189794-19bb-4cd8-af58-b8dc639f23d4" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
     </flow>
 </mule>

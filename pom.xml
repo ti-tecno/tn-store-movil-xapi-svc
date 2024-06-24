@@ -7,7 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>tn-store-movil-xapi-svc1-1.0.0-snapshot-mule-application</name>
+	<name>tn-store-movil-xapi-svc1-1.0.0-snapshot-mule-application_(1)</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,14 +58,7 @@
 		<dependency>
 			<groupId>740d1e14-4f09-4a77-a590-5b279bff931d</groupId>
 			<artifactId>tn-store-movil-xapi-svc</artifactId>
-			<version>1.0.2</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
-		<dependency>
-			<groupId>740d1e14-4f09-4a77-a590-5b279bff931d</groupId>
-			<artifactId>tn-store-user-papi-svc</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.9</version>
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>
