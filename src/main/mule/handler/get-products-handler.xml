@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<sub-flow name="get-products-handlerSub_Flow" doc:id="eebab184-421f-4bbc-9494-8bf4e334aa34" >
+		<flow-ref doc:name="Go to orchestrator" doc:id="1454434a-3526-4c78-85c4-4b28ec9a0e0a" name="get-products-orchestratorSub_Flow"/>
+	</sub-flow>
+</mule>
