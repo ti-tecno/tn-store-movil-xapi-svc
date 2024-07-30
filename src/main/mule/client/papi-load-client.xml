@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<http:request-config name="HTTP_Request_papi-loads-configuration" doc:name="HTTP Request configuration" doc:id="f5adc964-5acf-495a-a7c1-42a882c76561" basePath="${papi.loads.basePath}" >
 		<http:request-connection host="${papi.loads.host}" />
 	</http:request-config>
 	<sub-flow name="post-papi-load-clientSub_Flow" doc:id="cffd4821-a67e-442a-a03e-7ab2d248f0aa" >
-		<http:request method="GET" doc:name="Request" doc:id="7c696bc0-4bca-4887-88d6-9cec280f83c6" config-ref="HTTP_Request_papi-loads-configuration"/>
+		<ee:transform doc:name="Transform Message" doc:id="6fc81aa6-9c5e-42c7-8157-e608a10ce379" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<!-- [STUDIO:"Request"]<http:request method="GET" doc:name="Request" doc:id="7c696bc0-4bca-4887-88d6-9cec280f83c6" config-ref="HTTP_Request_papi-loads-configuration"/> [STUDIO] -->
 	</sub-flow>
 </mule>
