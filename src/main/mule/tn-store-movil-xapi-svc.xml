@@ -142,16 +142,7 @@ output application/json
 		<flow-ref doc:name="Go to handler" doc:id="3fc439ed-9b7d-4799-9a69-835064711aef" name="get-products-handlerSub_Flow"/>
     </flow>
     <flow name="post:\loads:application\json:tn-store-movil-xapi-svc-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "carga creada con exito"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+        <flow-ref doc:name="Call Handler" doc:id="1b4a11e3-bc87-4948-b397-f208cca6cfc1" name="post-load-handlerSub_Flow"/>
     </flow>
     <flow name="post:\users\login:application\json:tn-store-movil-xapi-svc-config">
 		<flow-ref doc:name="Go to handler" doc:id="572e8963-9e9c-4dd4-bf7c-f7293bb6051b" name="post-users-login-handlerSub_Flow"/>
