@@ -1,14 +1,18 @@
 #%RAML 1.0
-title: tn-store-movil-api-svc
+title: tn-store-movil-xapi-svc
 types:
   register_admin: !include /data_type/user_register.raml
   user-login: !include /data_type/user_login.raml
   recover_password: !include /data_type/post_recover_password.raml
   new_password: !include /data_type/patch_new_password.raml
-  post_product: !include data_type/product.raml
+  post_product: !include data_type/post_product.raml
   load: !include data_type/load.raml
+  inventory: !include /data_type/post_inventory.raml
+  
 traits:
-  secure: !include /trait/secure.raml
+  secure: !include /traits/secure.raml
+  getInventory: !include /traits/get_inventory.raml
+  get_products: !include traits/get_products.raml
 /users:
   is: [secure]
   post:
@@ -22,7 +26,7 @@ traits:
       201:
         body:
             application/json:
-                example: !include /example/responses/post_register.json
+                example: !include examples/responses/post_register.json
   /login:
     is: [secure]
     post:
@@ -38,7 +42,7 @@ traits:
         200:
           body:
               application/json:
-                  example: !include /example/responses/post_login.json
+                  example: !include /examples/responses/post_login.json
   /recoverPassword:
     is: [secure]
     post:
@@ -50,7 +54,7 @@ traits:
         200:
           body:
             application/json:
-              example: !include /example/responses/recoverPassword.json
+              example: !include /examples/responses/recoverPassword.json
   /new_password:
     is: [secure]
     patch:
@@ -66,7 +70,7 @@ traits:
         200:
           body:
             application/json:
-              example: !include /example/patch_new_password.json
+              example: !include examples/responses/patch_new_password.json
 /products:
   is: [secure]
   post:
@@ -78,14 +82,15 @@ traits:
         201:
           body:
             application/json:
-              example: !include example/responses/post_Product.json
+              example: !include examples/responses/post_Product.json
   get:
+    is: [get_products]
     description: Este servicio trae el objeto product de la BD
     responses:
       200:
         body:
           application/json:
-            example: !include example/responses/get_Product.json
+            example: !include examples/responses/get_Product.json
 /loads:
     is: [secure]
     post:
@@ -97,7 +102,7 @@ traits:
         201:
           body:
             application/json:
-              example: !include example/responses/post_load.json
+              example: !include examples/responses/post_load.json
     get:
       queryParameters:
         name_load:
@@ -108,6 +113,24 @@ traits:
         200:
           body:
             application/json:
-              example: !include example/responses/get_load.json
-                
-                            
+              example: !include examples/responses/get_load.json
+/inventories:
+  is: [secure]
+  post:
+    description: This service adds products to inventory
+    body:
+      application/json:
+        type: inventory
+    responses:
+      201:
+        body:
+          application/json:
+            example: !include /examples/responses/post_inventory.json
+  /{store_id}:/products:/{product_id}:
+    get:     
+      description: This service calls what is requested 
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /examples/responses/get_inventory.json

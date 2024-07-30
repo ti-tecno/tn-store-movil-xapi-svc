@@ -55,6 +55,13 @@
 			<version>1.10.3</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+			<groupId>f80bcd64-80f7-4bcc-91e5-1c1a62e9a429</groupId>
+			<artifactId>tn-store-movil-api-svc</artifactId>
+			<version>1.0.7</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
+		</dependency>
 	</dependencies>
 
 	<repositories>

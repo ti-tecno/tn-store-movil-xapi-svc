@@ -18,6 +18,5 @@ output application/java
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<!-- [STUDIO:"Request"]<http:request method="GET" doc:name="Request" doc:id="7c696bc0-4bca-4887-88d6-9cec280f83c6" config-ref="HTTP_Request_papi-loads-configuration"/> [STUDIO] -->
 	</sub-flow>
 </mule>

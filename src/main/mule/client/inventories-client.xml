@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<sub-flow name="post-inventories-clientSub_Flow" doc:id="c906c375-273f-4c5c-8eec-f042065f76fb" >
 		<http:request method="POST" doc:name="Request" doc:id="20dba753-f12c-41ad-84fd-ff158f24b00d" config-ref="HTTP_Request_configuration1" path="/v1/inventoies"/>
 	</sub-flow>
-	<sub-flow name="get-inventories-clientSub_Flow1" doc:id="1c7b7a6e-a3f7-4677-8e14-45b2e448eb55" >
+	<sub-flow name="get-inventories-store-products-produc_id-Sub_Flow" doc:id="1c7b7a6e-a3f7-4677-8e14-45b2e448eb55" >
 		<http:request method="GET" doc:name="Request" doc:id="b75bb044-bce6-4e88-94b3-20dc56d2423b" config-ref="HTTP_Request_configuration2" path="/v1/inventories/{store_id}/products/{product]_id}"/>
 	</sub-flow>
 </mule>

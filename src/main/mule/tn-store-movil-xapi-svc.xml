@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
-    <http:listener-config name="tn-store-movil-xapi-svc-httpListenerConfig">
-        <http:listener-connection host="0.0.0.0" port="8081" />
-    </http:listener-config>
+
     <apikit:config name="tn-store-movil-xapi-svc-config" api="tn-store-movil-xapi-svc.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="tn-store-movil-xapi-svc-main">
         <http:listener config-ref="tn-store-movil-xapi-svc-httpListenerConfig" path="/empresa/*">
@@ -124,7 +122,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="patch:\users\new_password:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Flow Reference" doc:id="8aa8c44e-05e5-49c2-99b9-948472a33948" name="patch-user-new-password-handlerSub_Flow"/>
+        <flow-ref doc:name="Flow Reference" doc:id="8aa8c44e-05e5-49c2-99b9-948472a33948" name="patch-user-new-password-handlerSub_Flow" />
     </flow>
     <flow name="get:\loads:tn-store-movil-xapi-svc-config">
         <ee:transform doc:name="Transform Message">
@@ -139,21 +137,27 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="get:\products:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="3fc439ed-9b7d-4799-9a69-835064711aef" name="get-products-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="3fc439ed-9b7d-4799-9a69-835064711aef" name="get-products-handlerSub_Flow" />
     </flow>
     <flow name="post:\loads:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Call Handler" doc:id="1b4a11e3-bc87-4948-b397-f208cca6cfc1" name="post-load-handlerSub_Flow"/>
+        <flow-ref doc:name="Call Handler" doc:id="1b4a11e3-bc87-4948-b397-f208cca6cfc1" name="post-load-handlerSub_Flow" />
     </flow>
     <flow name="post:\users\login:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="572e8963-9e9c-4dd4-bf7c-f7293bb6051b" name="post-users-login-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="572e8963-9e9c-4dd4-bf7c-f7293bb6051b" name="post-users-login-handlerSub_Flow" />
     </flow>
     <flow name="post:\products:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="c02d2a15-2d3a-4eb6-b343-d546dc5e950f" name="post-products-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="c02d2a15-2d3a-4eb6-b343-d546dc5e950f" name="post-products-handlerSub_Flow" />
     </flow>
     <flow name="post:\users\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="8ed34af8-1e08-47d7-9b2e-8ee30397588f" name="post-users-recover-password-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="8ed34af8-1e08-47d7-9b2e-8ee30397588f" name="post-users-recover-password-handlerSub_Flow" />
     </flow>
     <flow name="post:\users:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="e5660ca8-7e5d-46b7-9b24-017ffc2e39f4" name="post-user-handlerSub_Flow"/>
+        <flow-ref doc:name="Go to handler" doc:id="e5660ca8-7e5d-46b7-9b24-017ffc2e39f4" name="post-user-handlerSub_Flow" />
+    </flow>
+    <flow name="get:\inventories\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="24d1f91c-4288-4206-a0c8-32ee48e2cb6c" name="get-inventories-store-products-produc_id-handlerSub_Flow"/>
+    </flow>
+    <flow name="post:\inventories:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="36345410-e994-4177-b0d9-3b61f88defae" name="post-invetories-handlerSub_Flow"/>
     </flow>
 </mule>
