@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.modules/mule-apikit-module/1.10.3"/>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-http-connector/1.9.1"/>
+	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/f80bcd64-80f7-4bcc-91e5-1c1a62e9a429/tn-store-load-papi-svc/1.0.1"/>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.modules/mule-apikit-module/1.10.4"/>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-http-connector/1.9.2"/>
 	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sockets-connector/1.2.4"/>
+	<classpathentry kind="con" path="org.mule.tooling.MULE_PROJECT_LIB"/>
+	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/93872d8f-f0fc-43a1-85df-b260d4b6bf8f/tn-store-load-papi-svc/1.0.10"/>
 	<classpathentry exported="true" kind="con" path="MULE_RUNTIME/org.mule.tooling.server.4.6.ee"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/mule"/>
