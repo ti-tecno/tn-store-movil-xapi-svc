@@ -56,15 +56,13 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
 			<groupId>f80bcd64-80f7-4bcc-91e5-1c1a62e9a429</groupId>
 			<artifactId>tn-store-movil-api-svc</artifactId>
 			<version>1.0.7</version>
-=======
 			<groupId>93872d8f-f0fc-43a1-85df-b260d4b6bf8f</groupId>
 			<artifactId>tn-store-movil-xapi-svc</artifactId>
 			<version>1.0.9</version>
->>>>>>> qa
+
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>
