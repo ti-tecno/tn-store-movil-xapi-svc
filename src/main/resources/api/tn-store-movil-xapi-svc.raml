@@ -10,9 +10,14 @@ types:
   inventory: !include /data_type/post_inventory.raml
   
 traits:
+<<<<<<< HEAD
   secure: !include /traits/secure.raml
   getInventory: !include /traits/get_inventory.raml
   get_products: !include traits/get_products.raml
+=======
+  secure: !include /trait/secure.raml
+  getInventory: !include /trait/get_inventory.raml
+>>>>>>> qa
 /users:
   is: [secure]
   post:
@@ -113,7 +118,11 @@ traits:
         200:
           body:
             application/json:
+<<<<<<< HEAD
               example: !include examples/responses/get_load.json
+=======
+              example: !include example/responses/get_load.json
+>>>>>>> qa
 /inventories:
   is: [secure]
   post:
@@ -125,6 +134,7 @@ traits:
       201:
         body:
           application/json:
+<<<<<<< HEAD
             example: !include /examples/responses/post_inventory.json
   /{store_id}:/products:/{product_id}:
     get:     
@@ -134,3 +144,14 @@ traits:
           body:
             application/json:
               example: !include /examples/responses/get_inventory.json
+=======
+            example: !include /example/responses/post_inventory.json
+  get:
+    is: [getInventory]      
+    description: This service calls what is requested 
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /example/responses/get_inventory.json    
+>>>>>>> qa
