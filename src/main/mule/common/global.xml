@@ -20,6 +20,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:request-connection host="tn-store-inventory-papi-svc.us-e2.cloudhub.io" port="80" />
 	</http:request-config>
 		<http:request-config name="HTTP_Request_configuration-papi-user-" doc:name="HTTP Request configuration" doc:id="a6c0445a-add4-4262-a18c-f0b19407912b" basePath="/api" >
-		<http:request-connection host="tn-store-inventory-papi-svc.us-e2.cloudhub.io" port="80" />
+		<http:request-connection host="tn-store-user-papi-svc.us-e2.cloudhub.io" port="80" />
 	</http:request-config>
 </mule>

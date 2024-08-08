@@ -6,13 +6,12 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="post-users-login-clientSub_Flow" doc:id="8c9365c0-4b6b-4189-be62-93620b9a788f" >
-		<http:request method="POST" doc:name="Request" doc:id="01e1a4b0-b8a2-4de6-9f37-f3b7847107bf" config-ref="HTTP_Request_configuration-papi-user-" path="/v1/users/login">
-		</http:request>
+		<http:request method="POST" doc:name="Request" doc:id="8a62145a-72ac-4bef-9adb-71a839c5ee5d" config-ref="HTTP_Request_configuration-papi-user-" path="/users/login" />
 	</sub-flow>
 	<sub-flow name="post-users-clientSub_Flow" doc:id="1f7e7dc0-f10d-405b-895b-c96e90585353" >
-		<http:request method="POST" doc:name="Request" doc:id="6ca15c23-33e0-450c-b77d-f9f793e2626a" config-ref="HTTP_Request_configuration-papi-user-" path="/user" />
+		<http:request method="POST" doc:name="Request" doc:id="6ca15c23-33e0-450c-b77d-f9f793e2626a" config-ref="HTTP_Request_configuration-papi-user-" path="/users" />
 	</sub-flow>
 	<sub-flow name="post-users-RecoverPassword-clientSub_Flow" doc:id="fe9c8be4-129e-430a-ad67-1d9a89e2f671" >
-		<http:request method="POST" doc:name="Request" doc:id="07b79f43-5291-4065-a5b1-2877d4ccf94c" config-ref="HTTP_Request_configuration-papi-user-" path="/v1/users/login" />
+		<http:request method="POST" doc:name="Request" doc:id="601bfedb-f13c-4a3a-889e-0d48f2cf5ac8" config-ref="HTTP_Request_configuration-papi-user-" path="/users/recoverPassword" />
 	</sub-flow>
 </mule>
