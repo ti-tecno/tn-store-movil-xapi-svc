@@ -18,4 +18,16 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 }]]]></http:headers>
 		</http:request>
 	</sub-flow>
+	<sub-flow name="get-products-clientSub_Flow" doc:id="255b5a2c-b636-4b79-9c42-8d09706ac85a" >
+		<ee:transform doc:name="Transform Message" doc:id="478a1398-007a-417b-bea5-6e517ad55b71" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message": "succesfuly"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
 </mule>

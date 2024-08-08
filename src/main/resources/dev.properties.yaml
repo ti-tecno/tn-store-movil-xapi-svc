@@ -24,3 +24,7 @@ mongo:
     orders: "orders"
     products: "product"
     sales: "sale"
+papi:
+  loads:
+    host: ""
+    basePath: ""

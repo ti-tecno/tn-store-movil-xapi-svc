@@ -9,12 +9,14 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:request-connection host="tn-store-inventory-papi-svc.us-e2.cloudhub.io" port="80" />
 	</http:request-config>
 	<sub-flow name="post-inventory-clientSub_Flow" doc:id="7809f2ba-0616-48db-baeb-0054b512b153" >
-		<http:request method="POST" doc:name="Request" doc:id="711b9a64-3bc7-4ce6-8519-57d4083a2ae6" config-ref="HTTP_Request_configuration3" path="/v1/inventories">
-			<http:query-params ><![CDATA[#[output application/java
+		<ee:transform doc:name="Transform Message" doc:id="3ef706f4-0bce-438e-9991-5f9a8bdf3573" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
 ---
 {
-	product_type : attributes.queryParams.product_type
-}]]]></http:query-params>
-		</http:request>
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
 	</sub-flow>
 </mule>

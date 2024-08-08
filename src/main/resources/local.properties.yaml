@@ -8,3 +8,23 @@ http:
 api:
   id:
     "19797486"
+    
+mongo:
+  user:
+    capacitacion
+  pass:
+    "90iVWpWuTf7jkevf"
+  dataBase:
+    "t1_store"
+  collections:
+    users: "user"
+    customers: "customer"
+    inventorys: "inventory"
+    loads: "load"
+    orders: "orders"
+    products: "product"
+    sales: "sale"
+papi:
+  loads:
+    host: ""
+    basePath: ""

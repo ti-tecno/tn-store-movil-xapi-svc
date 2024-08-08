@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	
+	<sub-flow name="post-user-login-clientSub_Flow" doc:id="8c9365c0-4b6b-4189-be62-93620b9a788f" >
+		<http:request method="POST" doc:name="Request" doc:id="01e1a4b0-b8a2-4de6-9f37-f3b7847107bf" config-ref="HTTP_Request_configuration2" path="/v1/users/login">
+		</http:request>
+	</sub-flow>
+	<sub-flow name="post-users-recoverPassword-clientSub_Flow" doc:id="ab274ca4-7d78-43f6-b5b4-3cca0502189d" >
+		<http:request method="POST" doc:name="Request" doc:id="eb841a28-c020-4370-bd08-743b77c239e1" config-ref="HTTP_Request_configuration2" path="user/recoverPassword" />
+	</sub-flow>
+	<sub-flow name="post-user-clientSub_Flow" doc:id="1f7e7dc0-f10d-405b-895b-c96e90585353" >
+		<http:request method="POST" doc:name="Request" doc:id="6ca15c23-33e0-450c-b77d-f9f793e2626a" config-ref="HTTP_Request_configuration2" path="/user" />
+	</sub-flow>
+	<sub-flow name="patch-user-new-password-clientSub_Flow" doc:id="98a05c8d-a9f6-416c-aef7-0b061a69c6a7" >
+		<ee:transform doc:name="Transform Message" doc:id="7c937019-babc-4e31-9791-e664277df65a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+</mule>
