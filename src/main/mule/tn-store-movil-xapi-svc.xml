@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
-   
+    <http:listener-config name="tn-store-movil-xapi-svc-httpListenerConfig">
+        <http:listener-connection host="${http.listener.host}" port="${http.listener.port}" />
+    </http:listener-config>
     <apikit:config name="tn-store-movil-xapi-svc-config" api="tn-store-movil-xapi-svc.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <global-property doc:name="Global Property" doc:id="5e1ff343-a188-4b1b-bba6-3d0fd44c3616" name="env" value="local" />
     <flow name="tn-store-movil-xapi-svc-main">
-        <http:listener config-ref="tn-store-movil-xapi-svc-httpListenerConfig" path="/empresa/*">
+        <http:listener config-ref="tn-store-movil-xapi-svc-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:response>
@@ -138,16 +140,7 @@ output application/json
         <flow-ref doc:name="go to handler" doc:id="1eb38b6a-a72a-4c3f-a9db-2ec015cf72df" name="get-loads-handlerSub_Flow" />
     </flow>
     <flow name="get:\products:tn-store-movil-xapi-svc-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "Succesfully"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+        <flow-ref doc:name="Go to handler" doc:id="967da55b-a755-4f8c-9217-54d63722c2b5" name="get-products-handlerSub_Flow" />
     </flow>
     <flow name="post:\loads:application\json:tn-store-movil-xapi-svc-config">
         <flow-ref doc:name="Flow Reference" doc:id="6db4009e-db48-4430-8f39-c6b6840addf2" name="post-loads-handlerSub_Flow" />
@@ -156,16 +149,7 @@ output application/json
         <flow-ref doc:name="Go to handler" doc:id="89ee8cea-0bbd-4a66-9396-9c502b2023fb" name="post-user-login-handlerSub_Flow" />
     </flow>
     <flow name="post:\products:application\json:tn-store-movil-xapi-svc-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "producto creado satisfactoriamente"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+        <flow-ref doc:name="Go to handler" doc:id="89cbe609-c21c-4a3d-b4b1-81c2e83a86ee" name="post-products-handlerSub_Flow" />
     </flow>
     <flow name="post:\users\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
         <flow-ref doc:name="Flow Reference" doc:id="cf363868-0b24-4ae2-9612-77a88fad8cfa" name="post-user-recoverPassword-handlerSub_Flow" />
@@ -178,5 +162,23 @@ output application/json
     </flow>
     <flow name="post:\inventories:application\json:tn-store-movil-xapi-svc-config">
         <flow-ref doc:name="Go to handler" doc:id="650179c8-a9b0-40ac-9cba-202426352537" name="post-inventory-handlerSub_Flow" />
+    </flow>
+    <flow name="get:\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
+        <ee:transform doc:name="Transform Message">
+            <ee:variables>
+                <ee:set-variable variableName="store_id">attributes.uriParams.'store_id'</ee:set-variable>
+                <ee:set-variable variableName="product_id">attributes.uriParams.'product_id'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <ee:transform doc:name="Transform Message">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  message: "existing inventory in database"
+}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
     </flow>
 </mule>

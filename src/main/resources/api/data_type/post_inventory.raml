@@ -1,39 +1,32 @@
 #%RAML 1.0 DataType
 type: object
 properties:
-  "product_type":
+  store_id: 
     type: string
-    required: true
-    example: "abarrotes"
+    required: false
+    example: "arf5g4ae6rg4ad6g46a"
   product:
-    type: string
+    type: array
     required: true
-    example: "escoba"
-  "product_id":
-    type: string
-    required: true
-    example: "A5A1V466V4Sadv65af4gv65"
-  "name_product":
-    type: string
-    required: true
-    example: "escoba"
-  "net_content":
-    type: string
-    required: true
-    example: "N/A"
-  "date_of_expiry":
-    type: string
-    required: true
-    example: "N/A"
-  "amount":
-    type: number
-    required: true
-    example: 50
-  "purchase_price":
-    type: number
-    required: true
-    example: 10
-  "total_quantity":
-    type: number
-    required: true
-    example: 500
+    items:
+      properties:
+        product_id:
+          type: string
+          required: false
+          example: "sd5b41a65gh46a4adf5b4s"
+        expiration_date:
+          type: date-only
+          required: false
+          example: "2025-10-11"
+        purchase_date:
+          type: date-only
+          required: false
+          example: "2024-10-11"
+        units:
+          type: number
+          required: false
+          example: 15
+        price:
+          type: number
+          required: false
+          example: 500
