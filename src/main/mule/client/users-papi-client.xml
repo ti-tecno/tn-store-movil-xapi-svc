@@ -16,15 +16,4 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<sub-flow name="post-user-clientSub_Flow" doc:id="1f7e7dc0-f10d-405b-895b-c96e90585353" >
 		<http:request method="POST" doc:name="Request" doc:id="6ca15c23-33e0-450c-b77d-f9f793e2626a" config-ref="HTTP_Request_configuration2" path="/user" />
 	</sub-flow>
-	<sub-flow name="patch-user-new-password-clientSub_Flow" doc:id="98a05c8d-a9f6-416c-aef7-0b061a69c6a7" >
-		<ee:transform doc:name="Transform Message" doc:id="7c937019-babc-4e31-9791-e664277df65a" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
-	</sub-flow>
 </mule>

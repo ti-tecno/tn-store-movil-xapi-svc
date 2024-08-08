@@ -6,13 +6,7 @@
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	
-	<sub-flow name="get-inventory-clientSub_Flow" doc:id="1775052d-361f-42c5-86c5-74d7cdc0a46f" >
-		<http:request method="GET" doc:name="Request" doc:id="ef4a875f-8b70-4f62-867b-736098d9dbdf" config-ref="HTTP_Request_configuration2" path="/v1/inventories">
-			<http:query-params ><![CDATA[#[output application/java
----
-{
-	product_type : attributes.queryParams.product_type
-}]]]></http:query-params>
-		</http:request>
+	<sub-flow name="post-inventories-clientSub_Flow" doc:id="7809f2ba-0616-48db-baeb-0054b512b153" >
+		<http:request method="POST" doc:name="Request" doc:id="0c820ae2-4d72-46d2-95dc-54156299c923" config-ref="HTTP_Request_configuration-inventories" path="/v1/inventories"/>
 	</sub-flow>
 </mule>
