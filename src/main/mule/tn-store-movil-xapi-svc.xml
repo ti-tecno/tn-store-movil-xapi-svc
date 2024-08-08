@@ -156,13 +156,6 @@ output application/json
 			</on-error-propagate>
 		</error-handler>
 	</flow>
-	<flow
-		name="patch:\users\new_password:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Flow Reference"
-			doc:id="8aa8c44e-05e5-49c2-99b9-948472a33948"
-			name="patch-user-new-password-handlerSub_Flow" />
-
-	</flow>
 	<flow name="get:\loads:tn-store-movil-xapi-svc-config">
 		<flow-ref doc:name="go to handler"
 			doc:id="1eb38b6a-a72a-4c3f-a9db-2ec015cf72df"
@@ -216,33 +209,16 @@ output application/json
 	<flow name="get:\inventories:tn-store-movil-xapi-svc-config">
 		<flow-ref doc:name="Go to handler"
 			doc:id="7f44ce0a-8560-489d-964a-001145468a1a"
-			name="get-inventory-handlerSub_Flow" />
+			name="get-inventories-store-products-produc_id-handlerSub_Flow" />
 	</flow>
 	<flow
 		name="post:\inventories:application\json:tn-store-movil-xapi-svc-config">
 		<flow-ref doc:name="Go to handler"
 			doc:id="650179c8-a9b0-40ac-9cba-202426352537"
-			name="post-inventory-handlerSub_Flow" />
+			name="post-inventories-orcehstratorSub_Flow" />
 	</flow>
 	<flow
 		name="get:\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
-		<ee:transform doc:name="Transform Message">
-			<ee:variables>
-				<ee:set-variable variableName="store_id">attributes.uriParams.'store_id'
-				</ee:set-variable>
-				<ee:set-variable variableName="product_id">attributes.uriParams.'product_id'
-				</ee:set-variable>
-			</ee:variables>
-		</ee:transform>
-		<ee:transform doc:name="Transform Message">
-			<ee:message>
-				<ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "existing inventory in database"
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+		<flow-ref doc:name="Go to handler" doc:id="a8a8e75c-5cb0-40ff-a0e3-174ee00c7c8c" name="get-products-handlerSub_Flow" />
 	</flow>
 </mule>
