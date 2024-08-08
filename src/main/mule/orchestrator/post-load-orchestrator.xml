@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
-	<sub-flow name="post-load-orchestratorSub_Flow" doc:id="4b8b6df0-6cae-4343-b899-209be8db2bd2" >
-		<flow-ref doc:name="Call client" doc:id="0229b936-e9e8-46c4-acf0-a23d5305d3c4" name="post-papi-load-clientSub_Flow"/>
-	</sub-flow>
-</mule>

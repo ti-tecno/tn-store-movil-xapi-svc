@@ -178,7 +178,7 @@ output application/json
 
 		<flow-ref doc:name="Go to handler"
 			doc:id="572e8963-9e9c-4dd4-bf7c-f7293bb6051b"
-			name="post-user-login-handlerSub_Flow" />
+			name="post-users-login-handlerSub_Flow" />
 	</flow>
 	<flow
 		name="post:\products:application\json:tn-store-movil-xapi-svc-config">
@@ -198,18 +198,7 @@ output application/json
 		name="post:\users:application\json:tn-store-movil-xapi-svc-config">
 		<flow-ref doc:name="Go to handler"
 			doc:id="e5660ca8-7e5d-46b7-9b24-017ffc2e39f4"
-			name="post-user-handlerSub_Flow" />
-	</flow>
-	<flow
-		name="get:\inventories\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler"
-			doc:id="24d1f91c-4288-4206-a0c8-32ee48e2cb6c"
-			name="get-inventories-store-products-produc_id-handlerSub_Flow" />
-	</flow>
-	<flow name="get:\inventories:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler"
-			doc:id="7f44ce0a-8560-489d-964a-001145468a1a"
-			name="get-inventories-store-products-produc_id-handlerSub_Flow" />
+			name="post-users-handlerSub_Flow" />
 	</flow>
 	<flow
 		name="post:\inventories:application\json:tn-store-movil-xapi-svc-config">

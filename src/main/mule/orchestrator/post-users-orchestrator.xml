@@ -3,7 +3,7 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
-	<sub-flow name="post-user-orchestratorSub_Flow" doc:id="af8293d2-e3c8-4301-93d8-6e72489a5950" >
-		<flow-ref doc:name="Go to client" doc:id="5b587335-463e-4466-8fbf-2701469dc9df" name="post-user-clientSub_Flow"/>
+	<sub-flow name="post-users-orchestratorSub_Flow" doc:id="467d397f-688e-42a0-a5b3-468d0cc82fd4" >
+		<flow-ref doc:name="Flow Reference" doc:id="b7446143-4e50-4c6b-a920-be88ae3e4b1a" name="post-users-clientSub_Flow"/>
 	</sub-flow>
 </mule>
