@@ -4,12 +4,7 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<http:request-config name="HTTP_Request_configuration1" doc:name="HTTP Request configuration" doc:id="10700460-2656-4dde-9532-ca98cc2d1d58" basePath="/api">
-		<http:request-connection host="tn-store-inventory-papi-svc.us-e2.cloudhub.io " port="80"/>
-	</http:request-config>
-	<http:request-config name="HTTP_Request_configuration2" doc:name="HTTP Request configuration" doc:id="16914a87-5e8c-48b3-9dfb-66683ab4c90e" basePath="/api" >
-		<http:request-connection host="tn-store-mongo-sapi-svc.us-e2.cloudhub.io" port="80" />
-	</http:request-config>
+	
 	<sub-flow name="post-inventories-clientSub_Flow" doc:id="c906c375-273f-4c5c-8eec-f042065f76fb" >
 		<http:request method="POST" doc:name="Request" doc:id="20dba753-f12c-41ad-84fd-ff158f24b00d" config-ref="HTTP_Request_configuration1" path="/v1/inventoies"/>
 	</sub-flow>

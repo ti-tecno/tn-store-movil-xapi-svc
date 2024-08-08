@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration5" doc:name="HTTP Request configuration" doc:id="63dd1d23-847e-492e-8510-5854036937f6" basePath="/api" >
+		<http:request-connection host="tn-store-products-papi-svc.us-e2.cloudhub.io" port="80" />
+	</http:request-config>
 	<sub-flow name="post-products-clientSub_Flow" doc:id="031e1101-2e89-4bfb-9299-9154ea96945d" >
-		<ee:transform doc:name="Transform Message" doc:id="ecb46ff7-0a14-4d54-9aee-5ba71b162a3d" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
+		<http:request method="POST" doc:name="Request" doc:id="404310cc-f894-4035-9bf0-95b44646a9f4" config-ref="HTTP_Request_configuration5" path="/v1/products" requestStreamingMode="NEVER">
+			<http:headers ><![CDATA[#[output application/java
 ---
 {
-	"message": "producto creado"
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+	client_secret : 1213987987,
+	client_id : 98798765132
+}]]]></http:headers>
+		</http:request>
 	</sub-flow>
 	<sub-flow name="get-products-clientSub_Flow" doc:id="255b5a2c-b636-4b79-9c42-8d09706ac85a" >
 		<ee:transform doc:name="Transform Message" doc:id="478a1398-007a-417b-bea5-6e517ad55b71" >
