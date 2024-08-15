@@ -3,30 +3,29 @@ type: object
 properties:
   store_id: 
     type: string
-    required: false
-    example: "arf5g4ae6rg4ad6g46a"
-  product:
-    type: array
     required: true
-    items:
-      properties:
-        product_id:
-          type: string
-          required: false
-          example: "sd5b41a65gh46a4adf5b4s"
-        expiration_date:
-          type: date-only
-          required: false
-          example: "2025-10-11"
-        purchase_date:
-          type: date-only
-          required: false
-          example: "2024-10-11"
-        units:
-          type: number
-          required: false
-          example: 15
-        price:
-          type: number
-          required: false
-          example: 500
+    example: "arf5g4ae6rg4ad6g46a"
+  product_id:
+    type: string
+    required: true
+    example: "sd5b41a65gh46a4adf5b4s"
+  expiration_date:
+    type: date-only
+    required: true
+    example: "2025-10-11"
+  purchase_date:
+    type: date-only
+    required: true
+    example: "2024-10-11"
+  units:
+    type: number
+    required: true
+    example: 15
+  price:
+    type: number
+    required: true
+    example: 500
+  on_route:
+    type: number
+    required: false
+    example: 0
