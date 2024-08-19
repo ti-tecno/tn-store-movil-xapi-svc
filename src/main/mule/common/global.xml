@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-  
+  	<configuration-properties doc:name="Configuration properties" doc:id="c2cc055d-f530-4e48-972f-7ab12cd4feed" file="${env}.properties.yaml" />
+	<global-property doc:name="Global Property" doc:id="3a141add-130f-40b3-aad0-4e4e2d564355" name="env" value="dev" />
+	<api-gateway:autodiscovery apiId="${api.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="c19e12c4-cbb7-48bf-9237-f49218616046" flowRef="tn-store-movil-xapi-svc-main" />
 	<global-property doc:name="Global Property" doc:id="1a70c790-ee78-488a-b3d6-0856c227cdcd" name="env" value="local" />
 	<configuration-properties doc:name="Configuration properties" doc:id="938c9a31-44d2-433e-ab77-1e3c9f9b1084" file="local.properties.yaml" />
 	<http:request-config name="HTTP_Request_configuration-inventories" doc:name="HTTP Request configuration" doc:id="c4bdf620-67a3-4da6-b787-55207323ad72" basePath="/api">

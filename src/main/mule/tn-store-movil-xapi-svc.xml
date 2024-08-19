@@ -149,6 +149,6 @@ output application/json
         <flow-ref doc:name="Go to handler" doc:id="650179c8-a9b0-40ac-9cba-202426352537" name="post-invetories-handlerSub_Flow" />
     </flow>
     <flow name="get:\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="a8a8e75c-5cb0-40ff-a0e3-174ee00c7c8c" name="get-products-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="a8a8e75c-5cb0-40ff-a0e3-174ee00c7c8c" name="get-inventories-store-products-produc_id-handlerSub_Flow" />
     </flow>
 </mule>

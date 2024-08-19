@@ -8,12 +8,13 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	
 
 	<sub-flow name="get-inventory-clientSub_Flow" doc:id="1775052d-361f-42c5-86c5-74d7cdc0a46f" >
-		<http:request method="GET" doc:name="Request" doc:id="ef4a875f-8b70-4f62-867b-736098d9dbdf" config-ref="HTTP_Request_configuration-sapi-mongo" path="/v1/inventories">
-			<http:query-params ><![CDATA[#[output application/java
+		<http:request method="GET" doc:name="Request" doc:id="ef4a875f-8b70-4f62-867b-736098d9dbdf" config-ref="HTTP_Request_configuration-sapi-mongo" path="/v1/inventories/store/{store_id}/products/{product_id}">
+			<http:uri-params ><![CDATA[#[output application/java
 ---
 {
-	product_type : attributes.queryParams.product_type
-}]]]></http:query-params>
+	store_id : attributes.uriParams.store_id,
+	product_id : attributes.uriParams.product_id
+}]]]></http:uri-params>
 		</http:request>
 	</sub-flow>
 </mule>
