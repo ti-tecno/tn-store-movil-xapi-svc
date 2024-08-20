@@ -19,13 +19,12 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		</http:request>
 	</sub-flow>
 	<sub-flow name="get-products-clientSub_Flow" doc:id="255b5a2c-b636-4b79-9c42-8d09706ac85a" >
-		<http:request method="GET" doc:name="Request" doc:id="e87e06a8-8eaf-4bee-85d7-421fb5453121" config-ref="HTTP_Request_configuration-sapi-mongo" path="/v1/inventories/store/store_id/products/product_id">
-			<http:uri-params ><![CDATA[#[output application/java
+		<http:request method="GET" doc:name="Request" doc:id="e87e06a8-8eaf-4bee-85d7-421fb5453121" config-ref="HTTP_Request_configuration-sapi-mongo" path="/v1/products">
+			<http:query-params ><![CDATA[#[output application/java
 ---
 {
-	store_id : attributes.uriParams.store_id,
-	product_id : attributes.uriParams.product_id
-}]]]></http:uri-params>
+	name : attributes.queryParams.name
+}]]]></http:query-params>
 		</http:request>
 	</sub-flow>
 </mule>
