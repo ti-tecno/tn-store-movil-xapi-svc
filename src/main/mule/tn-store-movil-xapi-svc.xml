@@ -124,31 +124,31 @@ output application/json
             </on-error-propagate>
         </error-handler>
     </flow>
-    <flow name="get:\loads:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="go to handler" doc:id="1eb38b6a-a72a-4c3f-a9db-2ec015cf72df" name="get-loads-handlerSub_Flow" />
+    <flow name="get:\v1\loads:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="go to handler" doc:id="b36c536a-61cb-40a8-b6ea-49625e6a7465" name="get-loads-handlerSub_Flow" />
     </flow>
-    <flow name="get:\products:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="967da55b-a755-4f8c-9217-54d63722c2b5" name="get-products-handlerSub_Flow" />
+    <flow name="get:\v1\products:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="57f42b75-dbb1-4f70-a512-61c46fa9cc5c" name="get-products-handlerSub_Flow" />
     </flow>
-    <flow name="post:\loads:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Flow Reference" doc:id="6db4009e-db48-4430-8f39-c6b6840addf2" name="post-loads-handlerSub_Flow" />
+    <flow name="get:\v1\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="78ea534b-0006-4043-bbb1-c48c155fd758" name="get-inventories-store-products-produc_id-handlerSub_Flow" />
     </flow>
-    <flow name="post:\users\login:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="572e8963-9e9c-4dd4-bf7c-f7293bb6051b" name="post-users-login-handlerSub_Flow" />
+    <flow name="post:\v1\inventories:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="33d8d181-3039-4a9e-b63a-b2e44d032c39" name="post-invetories-handlerSub_Flow" />
     </flow>
-    <flow name="post:\products:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="89cbe609-c21c-4a3d-b4b1-81c2e83a86ee" name="post-products-handlerSub_Flow" />
+    <flow name="post:\v1\loads:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Flow Reference" doc:id="20f5c0c8-e3b0-4ef0-afe2-82208de64964" name="post-loads-handlerSub_Flow" />
     </flow>
-    <flow name="post:\users\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="8ed34af8-1e08-47d7-9b2e-8ee30397588f" name="post-users-recover-password-handlerSub_Flow" />
+    <flow name="post:\v1\users\login:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="6ca14f96-7e48-4422-ac85-a18f0b788a0d" name="post-users-login-handlerSub_Flow" />
     </flow>
-    <flow name="post:\users:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="e5660ca8-7e5d-46b7-9b24-017ffc2e39f4" name="post-users-handlerSub_Flow" />
+    <flow name="post:\v1\products:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="66a6427f-6e06-44bc-b10e-eae296505e77" name="post-products-handlerSub_Flow" />
     </flow>
-    <flow name="post:\inventories:application\json:tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="650179c8-a9b0-40ac-9cba-202426352537" name="post-invetories-handlerSub_Flow" />
+    <flow name="post:\v1\users\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="362c41fa-1251-44f7-bfe2-6bd484d023c2" name="post-users-recover-password-handlerSub_Flow" />
     </flow>
-    <flow name="get:\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
-        <flow-ref doc:name="Go to handler" doc:id="a8a8e75c-5cb0-40ff-a0e3-174ee00c7c8c" name="get-inventories-store-products-produc_id-handlerSub_Flow" />
+    <flow name="post:\v1\users:application\json:tn-store-movil-xapi-svc-config">
+		<flow-ref doc:name="Go to handler" doc:id="b66a800a-b738-4942-b18f-318ff5402026" name="post-users-handlerSub_Flow" />
     </flow>
 </mule>

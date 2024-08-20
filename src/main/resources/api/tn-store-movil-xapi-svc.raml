@@ -13,108 +13,109 @@ traits:
   secure: !include /traits/secure.raml
   getInventory: !include /traits/get_inventory.raml
   get_products: !include traits/get_products.raml
-/users:
-  is: [secure]
-  post:
-    description: este servicio regitra al administrador de la compania
-    body:
-      application/json:
-        type: register_admin
-    responses:
-      500:
-        description: Bad response from authorization server, or WSDL SOAP Fault error
-      201:
-        body:
-            application/json:
-                example: !include examples/responses/post_register.json
-  /login:
+/v1:  
+  /users:
     is: [secure]
     post:
-      description: este servicio permite logear el usuario
+      description: este servicio regitra al administrador de la compania
       body:
         application/json:
-          type: user-login
+          type: register_admin
       responses:
-        401:
-          description: Unauthorized or invalid client application credentials
         500:
           description: Bad response from authorization server, or WSDL SOAP Fault error
-        200:
+        201:
           body:
               application/json:
-                  example: !include /examples/responses/post_login.json
-  /recoverPassword:
-    is: [secure]
-    post:
-      description: Estre servicio no ayuda a recuperar la contraseña guadada en la base de datos
-      body:
-        application/json:
-          type: recover_password
-      responses:
-        200:
-          body:
-            application/json:
-              example: !include /examples/responses/recoverPassword.json
-/products:
-  is: [secure]
-  post:
-    description: Este servicio permite crear el objeto producto
-    body:
-        application/json:
-            type: post_product
-    responses:
-        201:
-          body:
-            application/json:
-              example: !include examples/responses/post_Product.json
-  get:
-    is: [get_products]
-    description: Este servicio trae el objeto product de la BD
-    responses:
-      200:
+                  example: !include examples/responses/post_register.json
+    /login:
+      is: [secure]
+      post:
+        description: este servicio permite logear el usuario
         body:
           application/json:
-            example: !include examples/responses/get_Product.json
-/loads:
+            type: user-login
+        responses:
+          401:
+            description: Unauthorized or invalid client application credentials
+          500:
+            description: Bad response from authorization server, or WSDL SOAP Fault error
+          200:
+            body:
+                application/json:
+                    example: !include /examples/responses/post_login.json
+    /recoverPassword:
+      is: [secure]
+      post:
+        description: Estre servicio no ayuda a recuperar la contraseña guadada en la base de datos
+        body:
+          application/json:
+            type: recover_password
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include /examples/responses/recoverPassword.json
+  /products:
     is: [secure]
     post:
-      description: Este servicio permite crear el objeto load
+      description: Este servicio permite crear el objeto producto
       body:
-        application/json:
-          type: load
+          application/json:
+              type: post_product
       responses:
-        201:
-          body:
-            application/json:
-              example: !include examples/responses/post_load.json
+          201:
+            body:
+              application/json:
+                example: !include examples/responses/post_Product.json
     get:
-      queryParameters:
-        name_load:
-          type: string
-          required: false
-      description: Este servicio trae todas registrados en Db
+      is: [get_products]
+      description: Este servicio trae el objeto product de la BD
       responses:
         200:
           body:
             application/json:
-              example: !include examples/responses/get_load.json
-/inventories:
-  is: [secure]
-  post:
-    description: This service adds products to inventory
-    body:
-      application/json:
-        type: inventory
-    responses:
-      201:
+              example: !include examples/responses/get_Product.json
+  /loads:
+      is: [secure]
+      post:
+        description: Este servicio permite crear el objeto load
         body:
           application/json:
-            example: !include /examples/responses/post_inventory.json
-  /store/{store_id}/products/{product_id}:
-    get:     
-      description: This service calls what is requested 
+            type: load
+        responses:
+          201:
+            body:
+              application/json:
+                example: !include examples/responses/post_load.json
+      get:
+        queryParameters:
+          name_load:
+            type: string
+            required: false
+        description: Este servicio trae todas registrados en Db
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include examples/responses/get_load.json
+  /inventories:
+    is: [secure]
+    post:
+      description: This service adds products to inventory
+      body:
+        application/json:
+          type: inventory
       responses:
-        200:
+        201:
           body:
             application/json:
-              example: !include /examples/responses/get_inventory.json
+              example: !include /examples/responses/post_inventory.json
+    /store/{store_id}/products/{product_id}:
+      get:     
+        description: This service calls what is requested 
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include /examples/responses/get_inventory.json
