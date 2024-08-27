@@ -56,9 +56,9 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
-			<groupId>f80bcd64-80f7-4bcc-91e5-1c1a62e9a429</groupId>
-			<artifactId>tn-store-movil-api-svc</artifactId>
-			<version>2.0.3</version>
+			<groupId>ae882681-742a-459c-aa45-fb7b209aebd0</groupId>
+			<artifactId>tn-store-movil-xapi-svc</artifactId>
+			<version>1.0.0</version>
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>

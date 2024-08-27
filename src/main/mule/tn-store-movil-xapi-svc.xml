@@ -125,30 +125,30 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\v1\loads:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="go to handler" doc:id="b36c536a-61cb-40a8-b6ea-49625e6a7465" name="get-loads-handlerSub_Flow" />
+        <flow-ref doc:name="go to handler" doc:id="b36c536a-61cb-40a8-b6ea-49625e6a7465" name="get-loads-handlerSub_Flow" />
     </flow>
     <flow name="get:\v1\products:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="57f42b75-dbb1-4f70-a512-61c46fa9cc5c" name="get-products-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="57f42b75-dbb1-4f70-a512-61c46fa9cc5c" name="get-products-handlerSub_Flow" />
     </flow>
     <flow name="get:\v1\inventories\store\(store_id)\products\(product_id):tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="78ea534b-0006-4043-bbb1-c48c155fd758" name="get-inventories-store-products-produc_id-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="78ea534b-0006-4043-bbb1-c48c155fd758" name="get-inventories-store-products-produc_id-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\inventories:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="33d8d181-3039-4a9e-b63a-b2e44d032c39" name="post-invetories-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="33d8d181-3039-4a9e-b63a-b2e44d032c39" name="post-invetories-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\loads:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Flow Reference" doc:id="20f5c0c8-e3b0-4ef0-afe2-82208de64964" name="post-loads-handlerSub_Flow" />
+        <flow-ref doc:name="Flow Reference" doc:id="20f5c0c8-e3b0-4ef0-afe2-82208de64964" name="post-loads-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\users\login:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="6ca14f96-7e48-4422-ac85-a18f0b788a0d" name="post-users-login-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="6ca14f96-7e48-4422-ac85-a18f0b788a0d" name="post-users-login-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\products:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="66a6427f-6e06-44bc-b10e-eae296505e77" name="post-products-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="66a6427f-6e06-44bc-b10e-eae296505e77" name="post-products-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\users\recoverPassword:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="362c41fa-1251-44f7-bfe2-6bd484d023c2" name="post-users-recover-password-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="362c41fa-1251-44f7-bfe2-6bd484d023c2" name="post-users-recover-password-handlerSub_Flow" />
     </flow>
     <flow name="post:\v1\users:application\json:tn-store-movil-xapi-svc-config">
-		<flow-ref doc:name="Go to handler" doc:id="b66a800a-b738-4942-b18f-318ff5402026" name="post-users-handlerSub_Flow" />
+        <flow-ref doc:name="Go to handler" doc:id="b66a800a-b738-4942-b18f-318ff5402026" name="post-users-handlerSub_Flow" />
     </flow>
 </mule>
