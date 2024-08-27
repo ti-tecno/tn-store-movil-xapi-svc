@@ -15,7 +15,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:request-connection host="tn-store-inventory-papi-svc.us-e2.cloudhub.io " port="80"/>
 	</http:request-config>
 	<http:request-config name="HTTP_Request_configuration-sapi-mongo" doc:name="HTTP Request configuration" doc:id="449b866c-0c4f-419f-b680-0b13f7e954a3" basePath="/api" >
-		<http:request-connection host="tn-mongo-sapi-svc.us-e2.cloudhub.io" port="80" />
+		<http:request-connection host="tn-store-mongo-sapi-svc.us-e2.cloudhub.io" port="80" />
 	</http:request-config>
 	<http:request-config name="HTTP_Request_papi-loads-configuration" doc:name="HTTP Request configuration" doc:id="cfa1a381-9d90-48d7-97ff-e35e4c7a7e38" basePath="${papi.loads.basePath}" >
 		<http:request-connection host="${papi.loads.host}" />

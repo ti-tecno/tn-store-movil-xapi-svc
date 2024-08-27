@@ -4,6 +4,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
 	<sub-flow name="post-inventories-orcehstratorSub_Flow" doc:id="d42f0548-85c5-49e3-a795-af1318f48f65" >
-		<flow-ref doc:name="Go to client" doc:id="d672f2bf-f3a7-4337-8aa3-c225053fcd55" name="post-inventories-clientSub_Flow"/>
+		<flow-ref doc:name="Go to client" doc:id="d672f2bf-f3a7-4337-8aa3-c225053fcd55" name="post-inventories-papi-clientSub_Flow"/>
 	</sub-flow>
 </mule>

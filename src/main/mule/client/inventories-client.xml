@@ -6,7 +6,17 @@
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	
-	<sub-flow name="post-inventories-clientSub_Flow" doc:id="7809f2ba-0616-48db-baeb-0054b512b153" >
+	<sub-flow name="post-inventories-papi-clientSub_Flow" doc:id="7809f2ba-0616-48db-baeb-0054b512b153" >
 		<http:request method="POST" doc:name="Request" doc:id="0c820ae2-4d72-46d2-95dc-54156299c923" config-ref="HTTP_Request_configuration-inventories" path="/v1/inventories"/>
+	</sub-flow>
+	<sub-flow name="get-inventory-mongo-clientSub_Flow" doc:id="03639e5d-df4c-49ea-8223-b3fbb5fba160" >
+		<http:request method="GET" doc:name="Request" doc:id="31a51571-b007-4c7c-b36a-e2574afb8b1a" config-ref="HTTP_Request_configuration-sapi-mongo" path="/v1/inventories/store/{store_id}/products/{product_id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	store_id : attributes.uriParams.store_id,
+	product_id : attributes.uriParams.product_id
+}]]]></http:uri-params>
+		</http:request>
 	</sub-flow>
 </mule>
